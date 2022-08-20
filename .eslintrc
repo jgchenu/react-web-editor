@@ -1,0 +1,30 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack.config.js"
+      }
+    },
+    "import/ignore": ["node_modules"]
+  },
+  "globals": {
+    "__DEV__": false,
+    "__MOCK__": false
+  }
+}
