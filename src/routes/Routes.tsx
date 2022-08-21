@@ -1,28 +1,36 @@
 import React from 'react';
-import Dashboard from '$src/containers/Dashboard';
-import DashboardMessages from '$src/containers/DashboardMessages';
-import DashboardTasks from '$src/containers/DashboardTasks';
 import { useRoutes } from 'react-router-dom';
-import Demo from '$src/containers/Demo';
-import ReduxDemo from '$src/containers/ReduxDemo';
+import { RouteName, RoutePath } from '$src/constants';
+import Dashboard from '$src/containers/Dashboard';
+import List from '$src/containers/List';
+import Setting from '$src/containers/Setting';
+import Doc from '$src/containers/Doc';
+import NotMatch from '$src/containers/NotMatch';
 
 const routes = [
   {
     path: '/',
     element: <Dashboard />,
     children: [
-      { index: true, element: 'not matched' },
+      { index: true, element: <NotMatch /> },
       {
-        path: 'demo',
-        element: <Demo />,
+        path: RouteName.Setting,
+        element: <Setting />,
       },
-      { path: 'redux-demo', element: <ReduxDemo /> },
+
       {
-        path: 'messages',
-        element: <DashboardMessages />,
+        path: RouteName.List,
+        element: <List />,
       },
-      { path: 'tasks', element: <DashboardTasks /> },
+      {
+        path: RoutePath.doc(':id'),
+        element: <Doc />,
+      },
     ],
+  },
+  {
+    path: '*',
+    element: <NotMatch />,
   },
 ];
 

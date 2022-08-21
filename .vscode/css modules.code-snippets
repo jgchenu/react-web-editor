@@ -17,5 +17,17 @@
     "prefix": ["cls"],
     "body": ["className={styles.$1}"],
     "description": "className for css with styles"
+  },
+  "import react": {
+    "scope": "javascript,typescript,typescriptreact",
+    "prefix": ["impr"],
+    "body": ["import React from 'react';"],
+    "description": "import react quickly"
+  },
+  "import styles": {
+    "scope": "javascript,typescript,typescriptreact",
+    "prefix": ["imps"],
+    "body": ["import styles from './style.less';"],
+    "description": "import styles quickly"
   }
 }

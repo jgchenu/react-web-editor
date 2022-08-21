@@ -135,6 +135,16 @@ const config = {
           },
         ],
         include: /node_modules/,
+        exclude: /node_modules\/.*\/content\.min\.css/,
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'css-loader',
+          },
+        ],
+        include: /node_modules\/.*\/content\.min\.css/,
       },
       {
         test: /\.svg$/i,
